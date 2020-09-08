@@ -38,15 +38,15 @@ public class AnimalHandler implements IAnimalHandler {
         for (String parameterRule: parameterRules) {
             if (parameterRule.contains("!")) {
                 parameterRule = parameterRule.replace("!", "");
-                if (!animal.contains(parameterRule)) {
+                if (!animal.toUpperCase().contains(parameterRule.toUpperCase())) {
                     isResult = true;
                 }
             }
-            else if(parameterRule.equals("")){
+            else if(parameterRule.toUpperCase().equals("")){
                 isResult = true;
             }
             else {
-                if (animal.contains(parameterRule)) {
+                if (animal.toUpperCase().contains(parameterRule.toUpperCase())) {
                     isResult = true;
                 }
             }
