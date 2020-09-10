@@ -10,7 +10,7 @@ public class AnimalHandler implements IAnimalHandler {
 
     private Rules rules;
 
-    public AnimalHandler(final Rules rules) throws IOException {
+    public AnimalHandler(final Rules rules){
         this.rules = rules;
     }
 
