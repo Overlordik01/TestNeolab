@@ -2,7 +2,7 @@ package neolab.handler.handlerAnimal;
 
 import java.io.IOException;
 
-interface IAnimalHandler {
+public interface IAnimalHandler {
 
     int toCountAnimals() throws IOException;
 }
