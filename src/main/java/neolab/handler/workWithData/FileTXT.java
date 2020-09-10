@@ -9,9 +9,7 @@ import java.nio.file.Paths;
 public class FileTXT implements IManager {
 
     public String[] getFileData(final Rules rules) {
-        String[] data = null;
-        data = getData(rules.getUrl()).split("\n");
-        return data;
+        return getData(rules.getUrl()).split("\n");
     }
 
     private String getData(final String url){

@@ -14,17 +14,9 @@ public class Rules {
     }
 
     private void connectRules(String URL) throws IOException {
-        InputStream stream = null;
-        InputStreamReader reader = null;
-        try {
-        stream = new FileInputStream(new File(URL));
-        reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
-        properties.load(reader);
-        } finally {
-            stream.close();
-            if (reader != null) {
-                reader.close();
-            }
+        try (InputStream stream = new FileInputStream(new File(URL))) {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
+            properties.load(reader);
         }
     }
 
